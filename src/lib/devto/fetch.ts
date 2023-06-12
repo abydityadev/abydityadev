@@ -3,7 +3,7 @@ import { Post, PostDetails } from "./types";
 
 export async function fetchPosts(): Promise<Post[]> {
   const res = await fetch(
-    `https://dev.to/api/articles?username=${process.env.DEVTO_USERNAME}`,
+    `https://dev.to/api/articles?username=abydityadev`,
     {
       next: { revalidate: 3 * 60 * 60 },
     }
@@ -15,7 +15,7 @@ export async function fetchPosts(): Promise<Post[]> {
 
 export async function fetchPost(slug: string): Promise<PostDetails> {
   const res = await fetch(
-    `https://dev.to/api/articles/${process.env.DEVTO_USERNAME}/${slug}`,
+    `https://dev.to/api/articles/abydityadev/${slug}`,
     {
       next: { revalidate: 3 * 60 * 60 },
     }
