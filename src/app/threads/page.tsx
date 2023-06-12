@@ -52,7 +52,7 @@ export default async function page() {
                                     <h5 className="card-title"><u>{t.title}</u> <span>[ {t.readable_publish_date} # {t.reading_time_minutes} min read ]</span></h5>
                                     <p className="card-text">{t.description}</p>
                                     {t.tag_list.map((tag) => (
-                                        <span className="badge text-bg-primary"># {tag}</span>
+                                        <span key={tag} className="badge text-bg-primary"># {tag}</span>
                                     ))}
                                 </div>
                             </Link>
