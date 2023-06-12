@@ -9,6 +9,30 @@ export const metadata: Metadata = {
     template: '%s | Abyditya'
   },
   description: "I'm Abyditya, A Website developer. I love to create something simple and clean.",
+  openGraph: {
+    title: 'Abyditya',
+    url: 'https://abyditya.space',
+    siteName: 'Abyditya',
+    locale: 'en-US',
+    type: 'website',
+    description: "I'm Abyditya, A Website developer. I love to create something simple and clean.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  twitter: {
+    title: 'Abyditya',
+    card: 'summary_large_image',
+    description: "I'm Abyditya, A Website developer. I love to create something simple and clean."
+  },
 }
 
 export default function page() {
