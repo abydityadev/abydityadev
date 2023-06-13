@@ -40,8 +40,9 @@ export function Repo() {
                             </div>
                         </Link>
                     </div>
-                ))}
+                )).slice(0, 4)}
             </div>
+            <a href="https://github.com/abydityadev?tab=repositories" target='_blank' className="more">More Projects</a>
         </div>
     )
 }

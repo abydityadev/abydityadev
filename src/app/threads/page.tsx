@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     },
     description: "I'm Abyditya, A Website developer. I love to create something simple and clean.",
     openGraph: {
-      title: 'Abyditya',
+      title: 'Abyan Raditya',
       url: 'https://abyditya.space',
       siteName: 'Abyditya',
       locale: 'en-US',

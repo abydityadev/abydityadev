@@ -282,6 +282,14 @@
     color: darkkhaki;
 }
 
+body > section.Repo > div > div {
+    margin-bottom: 1rem;
+}
+
+.Repo .more {
+    color: #000;
+}
+
 /*
 ╭───────────────────────────────────╮
 │                                   │
@@ -344,7 +352,7 @@ body > article > div > div.d-grid.gap-2.col-6.mx-auto > a:hover {
 }
 
 body > article > div > div.d-grid.gap-2.col-6.mx-auto > div.text-center > h1 {
-    margin-top: 3rem !important;
+    margin-top: 3rem;
 }
 
 /*
@@ -370,7 +378,11 @@ footer .quotes {
     margin: 1.5rem 0 !important;
 }
 
-footer a {
+footer .quotes a {
+    color: #7b43ff;
+}
+
+footer a.links {
     margin: 0 1rem;
     color: black;
     text-decoration: none;

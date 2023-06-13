@@ -87,8 +87,8 @@ a {
 */
 
 ::selection {
-    background: #eee;
-    color: #1f1e1c
+    background: #1f1e1c;
+    color: #eee
 }
 
 ::-webkit-scrollbar {

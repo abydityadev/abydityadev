@@ -10,9 +10,9 @@ export default function Footer() {
             <div className="container">
                 <section className="footer text-center">
                     <p className="title">© Copyright 2021 - 2023 Abyditya</p>
-                    <p className="quotes">&#8220;Just like how the colors of the sunset change,<br /> our code needs to be flexible and adaptable to change.&#8220;</p>
+                    <p className="quotes">A web inspired by <a href="https://rakarasell.dev/" target='_blank'>rakarasell.dev</a><br /> created with NextJS & Love 🥰</p>
                     {Config.Navbar.links.map((n) => (
-                        <a key={n.label} href={n.path}>{n.label}</a>
+                        <a className='links' key={n.label} href={n.path}>{n.label}</a>
                     ))}
                 </section>
             </div>
