@@ -1,37 +1,27 @@
-import 'highlight.js/styles/github-dark.css'; // Import your favorite highlight.js theme
+import React from 'react'
+import fs from 'fs';
+import Markdown from 'markdown-to-jsx';
+import matter from 'gray-matter'
 
-import { fetchPost, fetchPosts } from "@/lib/devto/fetch";
-import { renderMarkdown } from "@/lib/markdown";
-import Link from 'next/link';
-
-export async function generateMetadata({
-    params,
-}: {
-    params: { slug: string };
-}) {
-    const { title, description } = await fetchPost(params.slug);
-
-    return {
-        title,
-        description,
-    };
+const getPostContent = (slug: string) => {
+    const folder = "src/posts/";
+    const file = `${folder}${slug}.md`;
+    const content = fs.readFileSync(file, "utf-8");
+    const matterResult = matter(content);
+    return matterResult;
 }
 
-export default async function Page({ params }: { params: { slug: string } }) {
-    const { body_markdown } = await fetchPost(params.slug);
-
-    const content = await renderMarkdown(body_markdown);
-
+export default function page(props: any) {
+    const slug = props.params.slug;
+    const post = getPostContent(slug);
     return (
-        <>
-            <article>
-                <div className="container blogcontent">
-                    <div dangerouslySetInnerHTML={{ __html: content }} />
-                    <div className="d-grid gap-2 col-6 mx-auto">
-                        <Link href={'/threads'} className="btn btn-primary" type="button">Go Back</Link>
-                    </div>
-                </div>
-            </article>
-        </>
-    );
+        <section className='markdown container'>
+            <div className="info">
+                <h1>{post.data.title}</h1>
+                <div className="badge"># {post.data.tag}</div> <div className="badge">{post.data.date}</div>
+                <hr />
+            </div>
+            <Markdown>{post.content}</Markdown>
+        </section>
+    )
 }
